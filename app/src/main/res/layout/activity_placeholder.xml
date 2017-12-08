@@ -50,6 +50,47 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true" />
 
+
+        <TextView
+            android:id="@+id/choice_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textSize="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true" />
+
+        <TextView
+            android:id="@+id/choice_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textSize="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true" />
+
+        <TextView
+            android:id="@+id/choice_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textSize="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true" />
+
+        <TextView
+            android:id="@+id/choice_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textSize="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true" />
+
     </LinearLayout>
 
     <RelativeLayout
@@ -63,6 +104,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
+        android:padding="15dp"
         android:gravity="center"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
@@ -74,6 +116,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
+        android:padding="15dp"
         android:gravity="center"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
@@ -85,6 +128,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
+        android:padding="15dp"
         android:gravity="center"
         android:layout_alignParentLeft="true"
         android:textSize="50dp"
@@ -95,10 +139,57 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
+        android:padding="15dp"
         android:gravity="center"
         android:layout_alignParentRight="true"
         android:textSize="50dp"
         android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/option_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="15dp"
+            android:gravity="center"
+            android:layout_toLeftOf="@id/option_2"
+            android:textSize="50dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/option_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="15dp"
+            android:gravity="center"
+            android:layout_toRightOf="@id/option_1"
+            android:layout_alignParentBottom="true"
+            android:textSize="50dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/option_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="15dp"
+            android:gravity="center"
+            android:layout_toLeftOf="@+id/option_4"
+            android:layout_alignParentBottom="true"
+            android:textSize="50dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/option_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="15dp"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/option_3"
+            android:textSize="50dp"
+            android:textStyle="bold"/>
 
     </RelativeLayout>
 

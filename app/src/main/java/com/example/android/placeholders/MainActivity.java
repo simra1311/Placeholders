@@ -1,16 +1,14 @@
 package com.example.android.placeholders;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     TextView textView;
-    int currentWord = 0,noOfWords = 5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,13 +20,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
 
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,PlaceholderActivity.class);
-                if (currentWord < noOfWords) {
-                    intent.putExtra("WORD", currentWord);
-                    startActivity(intent);
-                    currentWord++;
-                    Log.i("TAG", currentWord+"");
-                }
+                Intent intent = new Intent(MainActivity.this, PlaceholderActivity.class);
+                startActivity(intent);
             }
         });
 

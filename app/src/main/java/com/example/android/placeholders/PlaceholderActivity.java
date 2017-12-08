@@ -19,17 +19,19 @@ public class PlaceholderActivity extends AppCompatActivity {
 
     int currentWord = 0 , currentCharacter = 0;
     String currentString;
-    public final int noOfWords = 5;
+    public final int noOfWords = 5;  //this is the count of the letters
     public final int totalNoOfChar = 11;  //ideally to be 26 to include all letters
     //for simplicity using 11 as there are only 5 words
     boolean correct = false;
-    String words[] = {"wood","ball","cats","dogs","food"};
-    char alpha[] = {'w','o','d','b','a','l','c','t','s','g','f'};
+    String words[] = {"WOODLOGS","BALL","CAT","DOGFISH","FOOD"};
+    //max length of  word cannot exceed 8 and it should be a proper word can;t be null
+  //  char alpha[] = {'w','o','d','b','a','l','c','t','s','g','f'};
 
     ImageView next,pic;
 
     //temporary variables
-    TextView option1,option2,option3,option4,choice1,choice2,choice3,choice4;
+    TextView option1,option2,option3,option4,option5,option6,option7,option8;  //we can also create an array
+    TextView choice1,choice2,choice3,choice4,choice5,choice6,choice7,choice8;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +39,6 @@ public class PlaceholderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_placeholder);
 
         Intent intent = getIntent();
-        intent.getIntExtra("WORD",0);
         next = (ImageView)findViewById(R.id.next);
         next.setVisibility(View.INVISIBLE);
 
@@ -55,101 +56,412 @@ public class PlaceholderActivity extends AppCompatActivity {
         choice3 = (TextView)findViewById(R.id.choice_3);
         option4 = (TextView)findViewById(R.id.option_4);
         choice4 = (TextView)findViewById(R.id.choice_4);
+        option5 = (TextView)findViewById(R.id.option_5);
+        choice5 = (TextView)findViewById(R.id.choice_5);
+        option6 = (TextView)findViewById(R.id.option_6);
+        choice6 = (TextView)findViewById(R.id.choice_6);
+        option7 = (TextView)findViewById(R.id.option_7);
+        choice7 = (TextView)findViewById(R.id.choice_7);
+        option8 = (TextView)findViewById(R.id.option_8);
+        choice8 = (TextView)findViewById(R.id.choice_8);
 
 
         setDefaults();
 
         if (currentWord == 0) {
+            int i = 0;
+            int j = 0;
             String uri = "@drawable/wood";
             int imageResource = getResources().getIdentifier(uri, null, getPackageName());
             Drawable res = getResources().getDrawable(imageResource);
             pic.setImageDrawable(res);
-            option1.setText("W");
-            choice1.setText("W");
+            //  option1.setText("W"); //to make it generic we can also use
+            option1.setText(words[j].charAt(i) + "");
+            // choice1.setText("W");
+            choice1.setText(words[j].charAt(i) + "");
             option1.setTextColor(getResources().getColor(R.color.colorAccent));
-            option2.setText("O");
-            choice2.setText("O");
-            option2.setTextColor(getResources().getColor(R.color.colorAccent));
-            option3.setText("O");
-            choice3.setText("O");
-            option3.setTextColor(getResources().getColor(R.color.colorAccent));
-            option4.setText("D");
-            choice4.setText("D");
+            i++;
+            if (words[j].length() > i) {
+                option2.setText(words[j].charAt(i) + "");
+                choice2.setText(words[j].charAt(i) + "");
+                option2.setTextColor(getResources().getColor(R.color.colorAccent));
+            } else {
+                option2.setText("");
+                choice2.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option3.setText(words[j].charAt(i) + "");
+                choice3.setText(words[j].charAt(i) + "");
+                option3.setTextColor(getResources().getColor(R.color.colorAccent));
+            } else {
+                option3.setText("");
+                choice3.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+            option4.setText(words[j].charAt(i) + "");
+            choice4.setText(words[j].charAt(i) + "");
             option4.setTextColor(getResources().getColor(R.color.colorAccent));
-
+            }
+            else {
+            option4.setText("");
+            choice4.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option5.setText(words[j].charAt(i) + "");
+                choice5.setText(words[j].charAt(i) + "");
+                option5.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+            else {
+                option5.setText("");
+                choice5.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option6.setText(words[j].charAt(i) + "");
+                choice6.setText(words[j].charAt(i) + "");
+                option6.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+            else {
+                option6.setText("");
+                choice6.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option7.setText(words[j].charAt(i) + "");
+                choice7.setText(words[j].charAt(i) + "");
+                option7.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+            else {
+                option7.setText("");
+                choice7.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option8.setText(words[j].charAt(i) + "");
+                choice8.setText(words[j].charAt(i) + "");
+                option8.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+            else {
+                option8.setText("");
+                choice8.setText("");
+            }
         }
         else if (currentWord == 1){
+            int i = 0, j = 1;
             String uri = "@drawable/ball";
             int imageResource = getResources().getIdentifier(uri, null, getPackageName());
             Drawable res = getResources().getDrawable(imageResource);
             pic.setImageDrawable(res);
-            option1.setText("B");
-            choice1.setText("B");
+            option1.setText(words[j].charAt(0)+"");
+            choice1.setText(words[j].charAt(i)+"");
             option1.setTextColor(getResources().getColor(R.color.colorAccent));
-            option2.setText("A");
-            choice2.setText("A");
-            option2.setTextColor(getResources().getColor(R.color.colorAccent));
-            option3.setText("L");
-            choice3.setText("L");
-            option3.setTextColor(getResources().getColor(R.color.colorAccent));
-            option4.setText("L");
-            choice4.setText("L");
-            option4.setTextColor(getResources().getColor(R.color.colorAccent));
+            i++;
+            if (words[j].length() > i) {
+                option2.setText(words[j].charAt(i) + "");
+                choice2.setText(words[j].charAt(i) + "");
+                option2.setTextColor(getResources().getColor(R.color.colorAccent));
+            } else {
+                option2.setText("");
+                choice2.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option3.setText(words[j].charAt(i) + "");
+                choice3.setText(words[j].charAt(i) + "");
+                option3.setTextColor(getResources().getColor(R.color.colorAccent));
+            } else {
+                option3.setText("");
+                choice3.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option4.setText(words[j].charAt(i) + "");
+                choice4.setText(words[j].charAt(i) + "");
+                option4.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+            else {
+                option4.setText("");
+                choice4.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option5.setText(words[j].charAt(i) + "");
+                choice5.setText(words[j].charAt(i) + "");
+                option5.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+            else {
+                option5.setText("");
+                choice5.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option6.setText(words[j].charAt(i) + "");
+                choice6.setText(words[j].charAt(i) + "");
+                option6.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+            else {
+                option6.setText("");
+                choice6.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option7.setText(words[j].charAt(i) + "");
+                choice7.setText(words[j].charAt(i) + "");
+                option7.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+            else {
+                option7.setText("");
+                choice7.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option8.setText(words[j].charAt(i) + "");
+                choice8.setText(words[j].charAt(i) + "");
+                option8.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+            else {
+                option8.setText("");
+                choice8.setText("");
+            }
 
         }
         else if (currentWord == 2){
+            int i = 0, j = 2;
             String uri = "@drawable/cats";
             int imageResource = getResources().getIdentifier(uri, null, getPackageName());
             Drawable res = getResources().getDrawable(imageResource);
             pic.setImageDrawable(res);
-            option1.setText("C");
-            choice1.setText("C");
+            option1.setText(words[j].charAt(0)+"");
+            choice1.setText(words[j].charAt(i)+"");
             option1.setTextColor(getResources().getColor(R.color.colorAccent));
-            option2.setText("A");
-            choice2.setText("A");
-            option2.setTextColor(getResources().getColor(R.color.colorAccent));
-            option3.setText("T");
-            choice3.setText("T");
-            option3.setTextColor(getResources().getColor(R.color.colorAccent));
-            option4.setText("S");
-            choice4.setText("S");
-            option4.setTextColor(getResources().getColor(R.color.colorAccent));
+            i++;
+            if (words[j].length() > i) {
+                option2.setText(words[j].charAt(i) + "");
+                choice2.setText(words[j].charAt(i) + "");
+                option2.setTextColor(getResources().getColor(R.color.colorAccent));
+            } else {
+                option2.setText("");
+                choice2.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option3.setText(words[j].charAt(i) + "");
+                choice3.setText(words[j].charAt(i) + "");
+                option3.setTextColor(getResources().getColor(R.color.colorAccent));
+            } else {
+                option3.setText("");
+                choice3.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option4.setText(words[j].charAt(i) + "");
+                choice4.setText(words[j].charAt(i) + "");
+                option4.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+            else {
+                option4.setText("");
+                choice4.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option5.setText(words[j].charAt(i) + "");
+                choice5.setText(words[j].charAt(i) + "");
+                option5.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+            else {
+                option5.setText("");
+                choice5.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option6.setText(words[j].charAt(i) + "");
+                choice6.setText(words[j].charAt(i) + "");
+                option6.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+            else {
+                option6.setText("");
+                choice6.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option7.setText(words[j].charAt(i) + "");
+                choice7.setText(words[j].charAt(i) + "");
+                option7.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+            else {
+                option7.setText("");
+                choice7.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option8.setText(words[j].charAt(i) + "");
+                choice8.setText(words[j].charAt(i) + "");
+                option8.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+            else {
+                option8.setText("");
+                choice8.setText("");
+            }
+
         }
         else if (currentWord == 3){
+            int i = 0, j =3;
             String uri = "@drawable/dogs";
             int imageResource = getResources().getIdentifier(uri, null, getPackageName());
             Drawable res = getResources().getDrawable(imageResource);
             pic.setImageDrawable(res);
-            option1.setText("D");
-            choice1.setText("D");
+            option1.setText(words[j].charAt(0)+"");
+            choice1.setText(words[j].charAt(i)+"");
             option1.setTextColor(getResources().getColor(R.color.colorAccent));
-            option2.setText("O");
-            choice2.setText("O");
-            option2.setTextColor(getResources().getColor(R.color.colorAccent));
-            option3.setText("G");
-            choice3.setText("G");
-            option3.setTextColor(getResources().getColor(R.color.colorAccent));
-            option4.setText("S");
-            choice4.setText("S");
-            option4.setTextColor(getResources().getColor(R.color.colorAccent));
+            i++;
+            if (words[j].length() > i) {
+                option2.setText(words[j].charAt(i) + "");
+                choice2.setText(words[j].charAt(i) + "");
+                option2.setTextColor(getResources().getColor(R.color.colorAccent));
+            } else {
+                option2.setText("");
+                choice2.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option3.setText(words[j].charAt(i) + "");
+                choice3.setText(words[j].charAt(i) + "");
+                option3.setTextColor(getResources().getColor(R.color.colorAccent));
+            } else {
+                option3.setText("");
+                choice3.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option4.setText(words[j].charAt(i) + "");
+                choice4.setText(words[j].charAt(i) + "");
+                option4.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+            else {
+                option4.setText("");
+                choice4.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option5.setText(words[j].charAt(i) + "");
+                choice5.setText(words[j].charAt(i) + "");
+                option5.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+            else {
+                option5.setText("");
+                choice5.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option6.setText(words[j].charAt(i) + "");
+                choice6.setText(words[j].charAt(i) + "");
+                option6.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+            else {
+                option6.setText("");
+                choice6.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option7.setText(words[j].charAt(i) + "");
+                choice7.setText(words[j].charAt(i) + "");
+                option7.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+            else {
+                option7.setText("");
+                choice7.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option8.setText(words[j].charAt(i) + "");
+                choice8.setText(words[j].charAt(i) + "");
+                option8.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+            else {
+                option8.setText("");
+                choice8.setText("");
+            }
         }
         else if (currentWord == 4){
+            int i = 0, j=4 ;
             String uri = "@drawable/food";
             int imageResource = getResources().getIdentifier(uri, null, getPackageName());
             Drawable res = getResources().getDrawable(imageResource);
             pic.setImageDrawable(res);
-            option1.setText("F");
-            choice1.setText("F");
+            option1.setText(words[j].charAt(0)+"");
+            choice1.setText(words[j].charAt(i)+"");
             option1.setTextColor(getResources().getColor(R.color.colorAccent));
-            option2.setText("O");
-            choice2.setText("O");
-            option2.setTextColor(getResources().getColor(R.color.colorAccent));
-            option3.setText("O");
-            choice3.setText("O");
-            option3.setTextColor(getResources().getColor(R.color.colorAccent));
-            option4.setText("D");
-            choice4.setText("D");
-            option4.setTextColor(getResources().getColor(R.color.colorAccent));
+            i++;
+            if (words[j].length() > i) {
+                option2.setText(words[j].charAt(i) + "");
+                choice2.setText(words[j].charAt(i) + "");
+                option2.setTextColor(getResources().getColor(R.color.colorAccent));
+            } else {
+                option2.setText("");
+                choice2.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option3.setText(words[j].charAt(i) + "");
+                choice3.setText(words[j].charAt(i) + "");
+                option3.setTextColor(getResources().getColor(R.color.colorAccent));
+            } else {
+                option3.setText("");
+                choice3.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option4.setText(words[j].charAt(i) + "");
+                choice4.setText(words[j].charAt(i) + "");
+                option4.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+            else {
+                option4.setText("");
+                choice4.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option5.setText(words[j].charAt(i) + "");
+                choice5.setText(words[j].charAt(i) + "");
+                option5.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+            else {
+                option5.setText("");
+                choice5.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option6.setText(words[j].charAt(i) + "");
+                choice6.setText(words[j].charAt(i) + "");
+                option6.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+            else {
+                option6.setText("");
+                choice6.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option7.setText(words[j].charAt(i) + "");
+                choice7.setText(words[j].charAt(i) + "");
+                option7.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+            else {
+                option7.setText("");
+                choice7.setText("");
+            }
+            i++;
+            if (words[j].length() > i) {
+                option8.setText(words[j].charAt(i) + "");
+                choice8.setText(words[j].charAt(i) + "");
+                option8.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+            else {
+                option8.setText("");
+                choice8.setText("");
+            }
         }
 
 
@@ -161,6 +473,14 @@ public class PlaceholderActivity extends AppCompatActivity {
         choice2.setOnDragListener(new ChoiceDragListener());
         choice3.setOnDragListener(new ChoiceDragListener());
         choice4.setOnDragListener(new ChoiceDragListener());
+        option5.setOnTouchListener(new ChoiceTouchListener());
+        option6.setOnTouchListener(new ChoiceTouchListener());
+        option7.setOnTouchListener(new ChoiceTouchListener());
+        option8.setOnTouchListener(new ChoiceTouchListener());
+        choice5.setOnDragListener(new ChoiceDragListener());
+        choice6.setOnDragListener(new ChoiceDragListener());
+        choice7.setOnDragListener(new ChoiceDragListener());
+        choice8.setOnDragListener(new ChoiceDragListener());
     }
 
     private void setDefaults() {
@@ -170,14 +490,26 @@ public class PlaceholderActivity extends AppCompatActivity {
         option2.setVisibility(View.VISIBLE);
         option3.setVisibility(View.VISIBLE);
         option4.setVisibility(View.VISIBLE);
+        option5.setVisibility(View.VISIBLE);
+        option6.setVisibility(View.VISIBLE);
+        option7.setVisibility(View.VISIBLE);
+        option8.setVisibility(View.VISIBLE);
         choice1.setTextColor(getResources().getColor(R.color.grey));
         choice2.setTextColor(getResources().getColor(R.color.grey));
         choice3.setTextColor(getResources().getColor(R.color.grey));
         choice4.setTextColor(getResources().getColor(R.color.grey));
+        choice5.setTextColor(getResources().getColor(R.color.grey));
+        choice6.setTextColor(getResources().getColor(R.color.grey));
+        choice7.setTextColor(getResources().getColor(R.color.grey));
+        choice8.setTextColor(getResources().getColor(R.color.grey));
         choice1.setTextAppearance(R.style.AppTheme);
         choice2.setTextAppearance(R.style.AppTheme);
         choice3.setTextAppearance(R.style.AppTheme);
         choice4.setTextAppearance(R.style.AppTheme);
+        choice5.setTextAppearance(R.style.AppTheme);
+        choice6.setTextAppearance(R.style.AppTheme);
+        choice7.setTextAppearance(R.style.AppTheme);
+        choice8.setTextAppearance(R.style.AppTheme);
 
 //        option1.setTag(null);
 //        option2.setTag(null);
@@ -265,6 +597,7 @@ public class PlaceholderActivity extends AppCompatActivity {
                         if (currentCharacter == words[currentWord].length()){
                             Log.i("TAG",currentCharacter+" "+currentString+" ");
                             next.setVisibility(View.VISIBLE);
+                            Toast.makeText(PlaceholderActivity.this,"Congrats,you got it right! Press NEXT to continue",Toast.LENGTH_SHORT).show();
                         }
                         //set the tag in the target view being dropped on - to the ID of the view being dropped
                         //dropTarget.setTag(dropped.getId());
