@@ -66,16 +66,16 @@ public class PlaceholderActivity extends AppCompatActivity {
             pic.setImageDrawable(res);
             option1.setText("W");
             choice1.setText("W");
-            choice1.setTextColor(getResources().getColor(R.color.colorAccent));
+            option1.setTextColor(getResources().getColor(R.color.colorAccent));
             option2.setText("O");
             choice2.setText("O");
-            choice2.setTextColor(getResources().getColor(R.color.colorAccent));
+            option2.setTextColor(getResources().getColor(R.color.colorAccent));
             option3.setText("O");
             choice3.setText("O");
-            choice3.setTextColor(getResources().getColor(R.color.colorAccent));
+            option3.setTextColor(getResources().getColor(R.color.colorAccent));
             option4.setText("D");
             choice4.setText("D");
-            choice4.setTextColor(getResources().getColor(R.color.colorAccent));
+            option4.setTextColor(getResources().getColor(R.color.colorAccent));
 
         }
         else if (currentWord == 1){
@@ -85,16 +85,16 @@ public class PlaceholderActivity extends AppCompatActivity {
             pic.setImageDrawable(res);
             option1.setText("B");
             choice1.setText("B");
-            choice1.setTextColor(getResources().getColor(R.color.colorAccent));
+            option1.setTextColor(getResources().getColor(R.color.colorAccent));
             option2.setText("A");
             choice2.setText("A");
-            choice2.setTextColor(getResources().getColor(R.color.colorAccent));
+            option2.setTextColor(getResources().getColor(R.color.colorAccent));
             option3.setText("L");
             choice3.setText("L");
-            choice3.setTextColor(getResources().getColor(R.color.colorAccent));
+            option3.setTextColor(getResources().getColor(R.color.colorAccent));
             option4.setText("L");
             choice4.setText("L");
-            choice4.setTextColor(getResources().getColor(R.color.colorAccent));
+            option4.setTextColor(getResources().getColor(R.color.colorAccent));
 
         }
         else if (currentWord == 2){
@@ -104,16 +104,16 @@ public class PlaceholderActivity extends AppCompatActivity {
             pic.setImageDrawable(res);
             option1.setText("C");
             choice1.setText("C");
-            choice1.setTextColor(getResources().getColor(R.color.colorAccent));
+            option1.setTextColor(getResources().getColor(R.color.colorAccent));
             option2.setText("A");
             choice2.setText("A");
-            choice2.setTextColor(getResources().getColor(R.color.colorAccent));
+            option2.setTextColor(getResources().getColor(R.color.colorAccent));
             option3.setText("T");
             choice3.setText("T");
-            choice3.setTextColor(getResources().getColor(R.color.colorAccent));
+            option3.setTextColor(getResources().getColor(R.color.colorAccent));
             option4.setText("S");
             choice4.setText("S");
-            choice4.setTextColor(getResources().getColor(R.color.colorAccent));
+            option4.setTextColor(getResources().getColor(R.color.colorAccent));
         }
         else if (currentWord == 3){
             String uri = "@drawable/dogs";
@@ -122,16 +122,16 @@ public class PlaceholderActivity extends AppCompatActivity {
             pic.setImageDrawable(res);
             option1.setText("D");
             choice1.setText("D");
-            choice1.setTextColor(getResources().getColor(R.color.colorAccent));
+            option1.setTextColor(getResources().getColor(R.color.colorAccent));
             option2.setText("O");
             choice2.setText("O");
-            choice2.setTextColor(getResources().getColor(R.color.colorAccent));
+            option2.setTextColor(getResources().getColor(R.color.colorAccent));
             option3.setText("G");
             choice3.setText("G");
-            choice3.setTextColor(getResources().getColor(R.color.colorAccent));
+            option3.setTextColor(getResources().getColor(R.color.colorAccent));
             option4.setText("S");
             choice4.setText("S");
-            choice4.setTextColor(getResources().getColor(R.color.colorAccent));
+            option4.setTextColor(getResources().getColor(R.color.colorAccent));
         }
         else if (currentWord == 4){
             String uri = "@drawable/food";
@@ -140,16 +140,16 @@ public class PlaceholderActivity extends AppCompatActivity {
             pic.setImageDrawable(res);
             option1.setText("F");
             choice1.setText("F");
-            choice1.setTextColor(getResources().getColor(R.color.colorAccent));
+            option1.setTextColor(getResources().getColor(R.color.colorAccent));
             option2.setText("O");
             choice2.setText("O");
-            choice2.setTextColor(getResources().getColor(R.color.colorAccent));
+            option2.setTextColor(getResources().getColor(R.color.colorAccent));
             option3.setText("O");
             choice3.setText("O");
-            choice3.setTextColor(getResources().getColor(R.color.colorAccent));
+            option3.setTextColor(getResources().getColor(R.color.colorAccent));
             option4.setText("D");
             choice4.setText("D");
-            choice4.setTextColor(getResources().getColor(R.color.colorAccent));
+            option4.setTextColor(getResources().getColor(R.color.colorAccent));
         }
 
 
@@ -170,6 +170,15 @@ public class PlaceholderActivity extends AppCompatActivity {
         option2.setVisibility(View.VISIBLE);
         option3.setVisibility(View.VISIBLE);
         option4.setVisibility(View.VISIBLE);
+        choice1.setTextColor(getResources().getColor(R.color.grey));
+        choice2.setTextColor(getResources().getColor(R.color.grey));
+        choice3.setTextColor(getResources().getColor(R.color.grey));
+        choice4.setTextColor(getResources().getColor(R.color.grey));
+        choice1.setTextAppearance(R.style.AppTheme);
+        choice2.setTextAppearance(R.style.AppTheme);
+        choice3.setTextAppearance(R.style.AppTheme);
+        choice4.setTextAppearance(R.style.AppTheme);
+
 //        option1.setTag(null);
 //        option2.setTag(null);
 //        option3.setTag(null);
@@ -265,7 +274,7 @@ public class PlaceholderActivity extends AppCompatActivity {
 
                     else
                         //displays message if first character of dropTarget is not equal to first character of dropped
-                        Toast.makeText(PlaceholderActivity.this, dropTarget.getText().toString() + "is not " + dropped.getText().toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(PlaceholderActivity.this, dropTarget.getText().toString() + " is not " + dropped.getText().toString(), Toast.LENGTH_LONG).show();
                     break;
                 case DragEvent.ACTION_DRAG_ENDED:
                     //no action necessary

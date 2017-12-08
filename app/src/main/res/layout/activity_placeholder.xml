@@ -6,15 +6,21 @@
     android:layout_height="match_parent"
     tools:context="com.example.android.placeholders.PlaceholderActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:id="@+id/linear">
+
 
     <TextView
-        android:id="@+id/option_1"
+        android:id="@+id/choice_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:gravity="center"
-        android:textSize="50dp"
-        android:textStyle="bold" />
+        android:textSize="50dp" />
 
     <TextView
         android:id="@+id/choice_2"
@@ -26,12 +32,61 @@
         android:gravity="center"/>
 
     <TextView
-        android:id="@+id/option_3"
+        android:id="@+id/choice_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:gravity="center"
         android:layout_below="@id/option_1"
+        android:textSize="50dp" />
+
+    <TextView
+        android:id="@+id/choice_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:textSize="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linear">
+
+
+    <TextView
+        android:id="@+id/option_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:textSize="50dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/option_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:textSize="50dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/option_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:layout_alignParentLeft="true"
         android:textSize="50dp"
         android:textStyle="bold" />
 
@@ -41,53 +96,11 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:gravity="center"
-        android:layout_toRightOf="@id/choice_3"
-        android:textSize="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/choice_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:gravity="center"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:textSize="50dp" />
-
-    <TextView
-        android:id="@+id/option_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:gravity="center"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:textSize="50dp"
-        android:layout_below="@id/choice_2"
-        android:textStyle="bold" />
+        android:textStyle="bold"/>
 
-    <TextView
-        android:id="@+id/choice_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:textSize="50dp" />
-
-    <TextView
-        android:id="@+id/choice_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:gravity="center"
-        android:layout_alignParentRight="true"
-        android:textSize="50dp" />
-
-
+    </RelativeLayout>
 
     <ImageView
         android:layout_width="wrap_content"
