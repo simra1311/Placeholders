@@ -42,6 +42,12 @@ public class PlaceholderActivity extends AppCompatActivity {
         next = (ImageView)findViewById(R.id.next);
         next.setVisibility(View.INVISIBLE);
 
+        words[0] = intent.getStringExtra("word1");
+        words[1] = intent.getStringExtra("word2");
+        words[2] = intent.getStringExtra("word3");
+        words[3] = intent.getStringExtra("word4");
+        words[4] = intent.getStringExtra("word5");
+
         pic = (ImageView)findViewById(R.id.pic);
         setTextViews();
     }
@@ -76,78 +82,7 @@ public class PlaceholderActivity extends AppCompatActivity {
             Drawable res = getResources().getDrawable(imageResource);
             pic.setImageDrawable(res);
             //  option1.setText("W"); //to make it generic we can also use
-            option1.setText(words[j].charAt(i) + "");
-            // choice1.setText("W");
-            choice1.setText(words[j].charAt(i) + "");
-            option1.setTextColor(getResources().getColor(R.color.colorAccent));
-            i++;
-            if (words[j].length() > i) {
-                option2.setText(words[j].charAt(i) + "");
-                choice2.setText(words[j].charAt(i) + "");
-                option2.setTextColor(getResources().getColor(R.color.colorAccent));
-            } else {
-                option2.setText("");
-                choice2.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option3.setText(words[j].charAt(i) + "");
-                choice3.setText(words[j].charAt(i) + "");
-                option3.setTextColor(getResources().getColor(R.color.colorAccent));
-            } else {
-                option3.setText("");
-                choice3.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-            option4.setText(words[j].charAt(i) + "");
-            choice4.setText(words[j].charAt(i) + "");
-            option4.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-            option4.setText("");
-            choice4.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option5.setText(words[j].charAt(i) + "");
-                choice5.setText(words[j].charAt(i) + "");
-                option5.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-                option5.setText("");
-                choice5.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option6.setText(words[j].charAt(i) + "");
-                choice6.setText(words[j].charAt(i) + "");
-                option6.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-                option6.setText("");
-                choice6.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option7.setText(words[j].charAt(i) + "");
-                choice7.setText(words[j].charAt(i) + "");
-                option7.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-                option7.setText("");
-                choice7.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option8.setText(words[j].charAt(i) + "");
-                choice8.setText(words[j].charAt(i) + "");
-                option8.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-                option8.setText("");
-                choice8.setText("");
-            }
+            setFormat(i,j);
         }
         else if (currentWord == 1){
             int i = 0, j = 1;
@@ -155,77 +90,7 @@ public class PlaceholderActivity extends AppCompatActivity {
             int imageResource = getResources().getIdentifier(uri, null, getPackageName());
             Drawable res = getResources().getDrawable(imageResource);
             pic.setImageDrawable(res);
-            option1.setText(words[j].charAt(0)+"");
-            choice1.setText(words[j].charAt(i)+"");
-            option1.setTextColor(getResources().getColor(R.color.colorAccent));
-            i++;
-            if (words[j].length() > i) {
-                option2.setText(words[j].charAt(i) + "");
-                choice2.setText(words[j].charAt(i) + "");
-                option2.setTextColor(getResources().getColor(R.color.colorAccent));
-            } else {
-                option2.setText("");
-                choice2.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option3.setText(words[j].charAt(i) + "");
-                choice3.setText(words[j].charAt(i) + "");
-                option3.setTextColor(getResources().getColor(R.color.colorAccent));
-            } else {
-                option3.setText("");
-                choice3.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option4.setText(words[j].charAt(i) + "");
-                choice4.setText(words[j].charAt(i) + "");
-                option4.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-                option4.setText("");
-                choice4.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option5.setText(words[j].charAt(i) + "");
-                choice5.setText(words[j].charAt(i) + "");
-                option5.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-                option5.setText("");
-                choice5.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option6.setText(words[j].charAt(i) + "");
-                choice6.setText(words[j].charAt(i) + "");
-                option6.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-                option6.setText("");
-                choice6.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option7.setText(words[j].charAt(i) + "");
-                choice7.setText(words[j].charAt(i) + "");
-                option7.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-                option7.setText("");
-                choice7.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option8.setText(words[j].charAt(i) + "");
-                choice8.setText(words[j].charAt(i) + "");
-                option8.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-                option8.setText("");
-                choice8.setText("");
-            }
+           setFormat(i,j);
 
         }
         else if (currentWord == 2){
@@ -234,78 +99,7 @@ public class PlaceholderActivity extends AppCompatActivity {
             int imageResource = getResources().getIdentifier(uri, null, getPackageName());
             Drawable res = getResources().getDrawable(imageResource);
             pic.setImageDrawable(res);
-            option1.setText(words[j].charAt(0)+"");
-            choice1.setText(words[j].charAt(i)+"");
-            option1.setTextColor(getResources().getColor(R.color.colorAccent));
-            i++;
-            if (words[j].length() > i) {
-                option2.setText(words[j].charAt(i) + "");
-                choice2.setText(words[j].charAt(i) + "");
-                option2.setTextColor(getResources().getColor(R.color.colorAccent));
-            } else {
-                option2.setText("");
-                choice2.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option3.setText(words[j].charAt(i) + "");
-                choice3.setText(words[j].charAt(i) + "");
-                option3.setTextColor(getResources().getColor(R.color.colorAccent));
-            } else {
-                option3.setText("");
-                choice3.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option4.setText(words[j].charAt(i) + "");
-                choice4.setText(words[j].charAt(i) + "");
-                option4.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-                option4.setText("");
-                choice4.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option5.setText(words[j].charAt(i) + "");
-                choice5.setText(words[j].charAt(i) + "");
-                option5.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-                option5.setText("");
-                choice5.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option6.setText(words[j].charAt(i) + "");
-                choice6.setText(words[j].charAt(i) + "");
-                option6.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-                option6.setText("");
-                choice6.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option7.setText(words[j].charAt(i) + "");
-                choice7.setText(words[j].charAt(i) + "");
-                option7.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-                option7.setText("");
-                choice7.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option8.setText(words[j].charAt(i) + "");
-                choice8.setText(words[j].charAt(i) + "");
-                option8.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-                option8.setText("");
-                choice8.setText("");
-            }
-
+            setFormat(i,j);
         }
         else if (currentWord == 3){
             int i = 0, j =3;
@@ -313,77 +107,7 @@ public class PlaceholderActivity extends AppCompatActivity {
             int imageResource = getResources().getIdentifier(uri, null, getPackageName());
             Drawable res = getResources().getDrawable(imageResource);
             pic.setImageDrawable(res);
-            option1.setText(words[j].charAt(0)+"");
-            choice1.setText(words[j].charAt(i)+"");
-            option1.setTextColor(getResources().getColor(R.color.colorAccent));
-            i++;
-            if (words[j].length() > i) {
-                option2.setText(words[j].charAt(i) + "");
-                choice2.setText(words[j].charAt(i) + "");
-                option2.setTextColor(getResources().getColor(R.color.colorAccent));
-            } else {
-                option2.setText("");
-                choice2.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option3.setText(words[j].charAt(i) + "");
-                choice3.setText(words[j].charAt(i) + "");
-                option3.setTextColor(getResources().getColor(R.color.colorAccent));
-            } else {
-                option3.setText("");
-                choice3.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option4.setText(words[j].charAt(i) + "");
-                choice4.setText(words[j].charAt(i) + "");
-                option4.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-                option4.setText("");
-                choice4.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option5.setText(words[j].charAt(i) + "");
-                choice5.setText(words[j].charAt(i) + "");
-                option5.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-                option5.setText("");
-                choice5.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option6.setText(words[j].charAt(i) + "");
-                choice6.setText(words[j].charAt(i) + "");
-                option6.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-                option6.setText("");
-                choice6.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option7.setText(words[j].charAt(i) + "");
-                choice7.setText(words[j].charAt(i) + "");
-                option7.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-                option7.setText("");
-                choice7.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option8.setText(words[j].charAt(i) + "");
-                choice8.setText(words[j].charAt(i) + "");
-                option8.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-                option8.setText("");
-                choice8.setText("");
-            }
+            setFormat(i,j);
         }
         else if (currentWord == 4){
             int i = 0, j=4 ;
@@ -391,77 +115,7 @@ public class PlaceholderActivity extends AppCompatActivity {
             int imageResource = getResources().getIdentifier(uri, null, getPackageName());
             Drawable res = getResources().getDrawable(imageResource);
             pic.setImageDrawable(res);
-            option1.setText(words[j].charAt(0)+"");
-            choice1.setText(words[j].charAt(i)+"");
-            option1.setTextColor(getResources().getColor(R.color.colorAccent));
-            i++;
-            if (words[j].length() > i) {
-                option2.setText(words[j].charAt(i) + "");
-                choice2.setText(words[j].charAt(i) + "");
-                option2.setTextColor(getResources().getColor(R.color.colorAccent));
-            } else {
-                option2.setText("");
-                choice2.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option3.setText(words[j].charAt(i) + "");
-                choice3.setText(words[j].charAt(i) + "");
-                option3.setTextColor(getResources().getColor(R.color.colorAccent));
-            } else {
-                option3.setText("");
-                choice3.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option4.setText(words[j].charAt(i) + "");
-                choice4.setText(words[j].charAt(i) + "");
-                option4.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-                option4.setText("");
-                choice4.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option5.setText(words[j].charAt(i) + "");
-                choice5.setText(words[j].charAt(i) + "");
-                option5.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-                option5.setText("");
-                choice5.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option6.setText(words[j].charAt(i) + "");
-                choice6.setText(words[j].charAt(i) + "");
-                option6.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-                option6.setText("");
-                choice6.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option7.setText(words[j].charAt(i) + "");
-                choice7.setText(words[j].charAt(i) + "");
-                option7.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-                option7.setText("");
-                choice7.setText("");
-            }
-            i++;
-            if (words[j].length() > i) {
-                option8.setText(words[j].charAt(i) + "");
-                choice8.setText(words[j].charAt(i) + "");
-                option8.setTextColor(getResources().getColor(R.color.colorAccent));
-            }
-            else {
-                option8.setText("");
-                choice8.setText("");
-            }
+           setFormat(i,j);
         }
 
 
@@ -481,6 +135,80 @@ public class PlaceholderActivity extends AppCompatActivity {
         choice6.setOnDragListener(new ChoiceDragListener());
         choice7.setOnDragListener(new ChoiceDragListener());
         choice8.setOnDragListener(new ChoiceDragListener());
+    }
+
+    private void setFormat(int i,int j){
+        option1.setText(words[j].charAt(i) + "");
+        choice1.setText(words[j].charAt(i) + "");
+        option1.setTextColor(getResources().getColor(R.color.colorAccent));
+        i++;
+        if (words[j].length() > i) {
+            option2.setText(words[j].charAt(i) + "");
+            choice2.setText(words[j].charAt(i) + "");
+            option2.setTextColor(getResources().getColor(R.color.colorAccent));
+        } else {
+            option2.setText("");
+            choice2.setText("");
+        }
+        i++;
+        if (words[j].length() > i) {
+            option3.setText(words[j].charAt(i) + "");
+            choice3.setText(words[j].charAt(i) + "");
+            option3.setTextColor(getResources().getColor(R.color.colorAccent));
+        } else {
+            option3.setText("");
+            choice3.setText("");
+        }
+        i++;
+        if (words[j].length() > i) {
+            option4.setText(words[j].charAt(i) + "");
+            choice4.setText(words[j].charAt(i) + "");
+            option4.setTextColor(getResources().getColor(R.color.colorAccent));
+        }
+        else {
+            option4.setText("");
+            choice4.setText("");
+        }
+        i++;
+        if (words[j].length() > i) {
+            option5.setText(words[j].charAt(i) + "");
+            choice5.setText(words[j].charAt(i) + "");
+            option5.setTextColor(getResources().getColor(R.color.colorAccent));
+        }
+        else {
+            option5.setText("");
+            choice5.setText("");
+        }
+        i++;
+        if (words[j].length() > i) {
+            option6.setText(words[j].charAt(i) + "");
+            choice6.setText(words[j].charAt(i) + "");
+            option6.setTextColor(getResources().getColor(R.color.colorAccent));
+        }
+        else {
+            option6.setText("");
+            choice6.setText("");
+        }
+        i++;
+        if (words[j].length() > i) {
+            option7.setText(words[j].charAt(i) + "");
+            choice7.setText(words[j].charAt(i) + "");
+            option7.setTextColor(getResources().getColor(R.color.colorAccent));
+        }
+        else {
+            option7.setText("");
+            choice7.setText("");
+        }
+        i++;
+        if (words[j].length() > i) {
+            option8.setText(words[j].charAt(i) + "");
+            choice8.setText(words[j].charAt(i) + "");
+            option8.setTextColor(getResources().getColor(R.color.colorAccent));
+        }
+        else {
+            option8.setText("");
+            choice8.setText("");
+        }
     }
 
     private void setDefaults() {
@@ -553,15 +281,17 @@ public class PlaceholderActivity extends AppCompatActivity {
 
         @Override
         public boolean onDrag(View v, DragEvent event) {
+            View view1 = (View) event.getLocalState();
             switch (event.getAction()) {
                 case DragEvent.ACTION_DRAG_STARTED:
-                    //no action necessary
+                    //stop displaying at the original location
+                    view1.setVisibility(View.INVISIBLE);
                     break;
                 case DragEvent.ACTION_DRAG_ENTERED:
                     //no action necessary
                     break;
                 case DragEvent.ACTION_DRAG_EXITED:
-                    //no action necessary
+                    view1.setVisibility(View.VISIBLE);
                     break;
                 case DragEvent.ACTION_DROP:
 
@@ -574,11 +304,8 @@ public class PlaceholderActivity extends AppCompatActivity {
                     //checking whether first character of dropTarget equals first character of dropped
                     if(dropTarget.getText().toString().charAt(0) == dropped.getText().toString().charAt(0))
                     {
-                        //stop displaying the view where it was before it was dragged
-                       view.setVisibility(View.INVISIBLE);
-                        //update the text in the target view to reflect the data being dropped
+                        view.setVisibility(View.INVISIBLE);
                         dropTarget.setTextColor(getResources().getColor(R.color.colorAccent));
-                        //make it bold to highlight the fact that an item has been dropped
                         dropTarget.setTypeface(Typeface.DEFAULT_BOLD);
                         //if an item has already been dropped here, there will be a tag
                         Object tag = dropTarget.getTag();
@@ -605,12 +332,21 @@ public class PlaceholderActivity extends AppCompatActivity {
                         dropTarget.setOnDragListener(null);
                     }
 
-                    else
+                    else {
                         //displays message if first character of dropTarget is not equal to first character of dropped
                         Toast.makeText(PlaceholderActivity.this, dropTarget.getText().toString() + " is not " + dropped.getText().toString(), Toast.LENGTH_LONG).show();
+                        //display back if not matched
+                        view1.setVisibility(View.VISIBLE);
+                    }
                     break;
                 case DragEvent.ACTION_DRAG_ENDED:
-                    //no action necessary
+                    if (event.getResult()){  //drop succeeded
+                       // view1.setVisibility(View.INVISIBLE);
+                    }
+                    else {
+                        view1.setVisibility(View.VISIBLE);
+                    }
+
                     break;
                 default:
                     break;

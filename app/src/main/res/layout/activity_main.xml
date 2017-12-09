@@ -9,17 +9,46 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:src="@drawable/welcome"
         android:id="@+id/image" />
 
-    <TextView
-        style="@style/Base.TextAppearance.AppCompat.Large"
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/word1"
+        android:hint="Enter a word to continue"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/word2"
+        android:hint="Enter a word to continue"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/word3"
+        android:hint="Enter a word to continue"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/word4"
+        android:hint="Enter a word to continue"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/word5"
+        android:hint="Enter a word to continue"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
         android:text="Let's Play >>"
         android:id="@+id/play"
         android:padding="15dp"
-        android:textSize="60dp" />
+        android:textSize="10dp" />
 
 </LinearLayout>
