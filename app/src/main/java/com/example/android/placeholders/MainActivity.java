@@ -50,8 +50,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addData(){
-
-
         one = word1.getEditableText().toString().trim();
         if (one.matches(""))    one = "woodlog";
         two = word2.getEditableText().toString().trim();

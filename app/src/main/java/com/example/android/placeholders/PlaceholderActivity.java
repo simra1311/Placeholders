@@ -4,10 +4,8 @@ import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.DragEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -20,16 +18,10 @@ public class PlaceholderActivity extends AppCompatActivity {
     int currentWord = 0 , currentCharacter = 0;
     String currentString;
     public final int noOfWords = 5;  //this is the count of the letters
-    public final int totalNoOfChar = 11;  //ideally to be 26 to include all letters
-    //for simplicity using 11 as there are only 5 words
     boolean correct = false;
     String words[] = {"WOODLOGS","BALL","CAT","DOGFISH","FOOD"};
-    //max length of  word cannot exceed 8 and it should be a proper word can;t be null
-  //  char alpha[] = {'w','o','d','b','a','l','c','t','s','g','f'};
-
+    //max length of  word cannot exceed 8 and it should be a proper word can't be null
     ImageView next,pic;
-
-    //temporary variables
     TextView option1,option2,option3,option4,option5,option6,option7,option8;  //we can also create an array
     TextView choice1,choice2,choice3,choice4,choice5,choice6,choice7,choice8;
 
@@ -77,44 +69,44 @@ public class PlaceholderActivity extends AppCompatActivity {
         if (currentWord == 0) {
             int i = 0;
             int j = 0;
-            String uri = "@drawable/wood";
-            int imageResource = getResources().getIdentifier(uri, null, getPackageName());
-            Drawable res = getResources().getDrawable(imageResource);
-            pic.setImageDrawable(res);
+//            String uri = "@drawable/wood";
+//            int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+//            Drawable res = getResources().getDrawable(imageResource);
+//            pic.setImageDrawable(res);
             //  option1.setText("W"); //to make it generic we can also use
             setFormat(i,j);
         }
         else if (currentWord == 1){
             int i = 0, j = 1;
-            String uri = "@drawable/ball";
-            int imageResource = getResources().getIdentifier(uri, null, getPackageName());
-            Drawable res = getResources().getDrawable(imageResource);
-            pic.setImageDrawable(res);
+//            String uri = "@drawable/ball";
+//            int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+//            Drawable res = getResources().getDrawable(imageResource);
+//            pic.setImageDrawable(res);
            setFormat(i,j);
 
         }
         else if (currentWord == 2){
             int i = 0, j = 2;
-            String uri = "@drawable/cats";
-            int imageResource = getResources().getIdentifier(uri, null, getPackageName());
-            Drawable res = getResources().getDrawable(imageResource);
-            pic.setImageDrawable(res);
+//            String uri = "@drawable/cats";
+//            int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+//            Drawable res = getResources().getDrawable(imageResource);
+//            pic.setImageDrawable(res);
             setFormat(i,j);
         }
         else if (currentWord == 3){
             int i = 0, j =3;
-            String uri = "@drawable/dogs";
-            int imageResource = getResources().getIdentifier(uri, null, getPackageName());
-            Drawable res = getResources().getDrawable(imageResource);
-            pic.setImageDrawable(res);
+//            String uri = "@drawable/dogs";
+//            int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+//            Drawable res = getResources().getDrawable(imageResource);
+//            pic.setImageDrawable(res);
             setFormat(i,j);
         }
         else if (currentWord == 4){
             int i = 0, j=4 ;
-            String uri = "@drawable/food";
-            int imageResource = getResources().getIdentifier(uri, null, getPackageName());
-            Drawable res = getResources().getDrawable(imageResource);
-            pic.setImageDrawable(res);
+//            String uri = "@drawable/food";
+//            int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+//            Drawable res = getResources().getDrawable(imageResource);
+//            pic.setImageDrawable(res);
            setFormat(i,j);
         }
 
@@ -239,26 +231,13 @@ public class PlaceholderActivity extends AppCompatActivity {
         choice7.setTextAppearance(R.style.AppTheme);
         choice8.setTextAppearance(R.style.AppTheme);
 
-//        option1.setTag(null);
-//        option2.setTag(null);
-//        option3.setTag(null);
-//        option4.setTag(null);
     }
 
-    /**
-     * ChoiceTouchListener will handle touch events on draggable views
-     *
-     */
     private final class ChoiceTouchListener implements View.OnTouchListener {
         @SuppressLint("NewApi")
         @Override
         public boolean onTouch(View view, MotionEvent motionEvent) {
             if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
-            /*
-             * Drag details: we only need default behavior
-             * - clip data could be set to pass data as part of drag
-             * - shadow can be tailored
-             */
                 ClipData data = ClipData.newPlainText("", "");
                 View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
                 //start dragging the item touched
@@ -270,12 +249,6 @@ public class PlaceholderActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * DragListener will handle dragged views being dropped on the drop area
-     * - only the drop action will have processing added to it as we are not
-     * - amending the default behavior for other parts of the drag process
-     *
-     */
     @SuppressLint("NewApi")
     private class ChoiceDragListener implements View.OnDragListener {
 
@@ -301,7 +274,6 @@ public class PlaceholderActivity extends AppCompatActivity {
                     TextView dropTarget = (TextView) v;
                     //view being dragged and dropped
                     TextView dropped = (TextView) view;
-                    //checking whether first character of dropTarget equals first character of dropped
                     if(dropTarget.getText().toString().charAt(0) == dropped.getText().toString().charAt(0))
                     {
                         view.setVisibility(View.INVISIBLE);
@@ -319,21 +291,18 @@ public class PlaceholderActivity extends AppCompatActivity {
                             findViewById(existingID).setVisibility(View.VISIBLE);
                         }
                         //check if all the characters have been placed properly
-
                         currentCharacter++;
                         if (currentCharacter == words[currentWord].length()){
-                            Log.i("TAG",currentCharacter+" "+currentString+" ");
+                           // Log.i("TAG",currentCharacter+" "+currentString+" ");
                             next.setVisibility(View.VISIBLE);
                             Toast.makeText(PlaceholderActivity.this,"Congrats,you got it right! Press NEXT to continue",Toast.LENGTH_SHORT).show();
                         }
-                        //set the tag in the target view being dropped on - to the ID of the view being dropped
                         //dropTarget.setTag(dropped.getId());
                         //remove setOnDragListener by setting OnDragListener to null, so that no further drag & dropping on this TextView can be done
                         dropTarget.setOnDragListener(null);
                     }
 
                     else {
-                        //displays message if first character of dropTarget is not equal to first character of dropped
                         Toast.makeText(PlaceholderActivity.this, dropTarget.getText().toString() + " is not " + dropped.getText().toString(), Toast.LENGTH_LONG).show();
                         //display back if not matched
                         view1.setVisibility(View.VISIBLE);
@@ -341,7 +310,7 @@ public class PlaceholderActivity extends AppCompatActivity {
                     break;
                 case DragEvent.ACTION_DRAG_ENDED:
                     if (event.getResult()){  //drop succeeded
-                       // view1.setVisibility(View.INVISIBLE);
+                        //no action required
                     }
                     else {
                         view1.setVisibility(View.VISIBLE);
@@ -365,7 +334,5 @@ public class PlaceholderActivity extends AppCompatActivity {
         }
         else
             Toast.makeText(PlaceholderActivity.this,"Game over",Toast.LENGTH_SHORT).show();
-
-//        finish();
     }
 }
