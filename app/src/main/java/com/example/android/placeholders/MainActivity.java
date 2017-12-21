@@ -9,7 +9,7 @@ import android.widget.EditText;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
+import com.google.firebase.analytics.FirebaseAnalytics;
 public class MainActivity extends AppCompatActivity {
 
     Button button;
@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     String one,two,three,four,five;
 
     DatabaseReference databaseReference;
+    private FirebaseAnalytics firebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,13 @@ public class MainActivity extends AppCompatActivity {
         word5 = (EditText)findViewById(R.id.word5);
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Words");
+
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this);
+//        Bundle bundle = new Bundle();
+//        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, id);
+//        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, name);
+//        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
+//        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
 
         button = (Button) findViewById(R.id.play);
         button.setOnClickListener(new View.OnClickListener() {
